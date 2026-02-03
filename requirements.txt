@@ -1,0 +1,5 @@
+flet
+pyTelegramBotAPI
+requests
+psutil
+speedtest-cli
