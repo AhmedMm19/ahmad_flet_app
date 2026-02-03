@@ -10,16 +10,6 @@ import random
 from datetime import datetime
 import platform
 def setup_telegram():
-    
-    try:
-        # محاولة الاستيراد أولاً
-        import telebot
-
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")
-        from telegram.error import TelegramError
-        return True
-    except ImportError:
-        try:
             
             print("📦 جاري تثبيت المتطلبات...")
             subprocess.check_call([
