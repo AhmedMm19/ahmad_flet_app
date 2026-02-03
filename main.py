@@ -24,9 +24,13 @@ def setup_telegram():
         return False
 
 
+TELEGRAM_AVAILABLE = setup_telegram()
+
+
 if TELEGRAM_AVAILABLE:
-    from telegram import Bot
-    from telegram.error import TelegramError
+    print("Telegram is ready")
+else:
+    print("Telegram is NOT available")
 
 
 class Config:
