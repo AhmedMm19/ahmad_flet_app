@@ -13,7 +13,9 @@ def setup_telegram():
     
     try:
         # محاولة الاستيراد أولاً
-        from telegram import Bot
+        import telebot
+
+bot = telebot.TeleBot("YOUR_BOT_TOKEN")
         from telegram.error import TelegramError
         return True
     except ImportError:
