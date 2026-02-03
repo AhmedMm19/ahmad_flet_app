@@ -10,23 +10,18 @@ import random
 from datetime import datetime
 import platform
 def setup_telegram():
-            
-            print("📦 جاري تثبيت المتطلبات...")
-            subprocess.check_call([
-                sys.executable, "-m", "pip", "install", "python-telegram-bot", "--quiet"
-            ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            
-        
-            from telegram import Bot
-            from telegram.error import TelegramError
-            print("✅ تم تثبيت المتطلبات بنجاح")
-            return True
-        except (subprocess.CalledProcessError, ImportError):
-            print("❌ فشل في تثبيت المتطلبات")
-            return False
+    try:
+        import telebot
 
+        BOT_TOKEN = "YOUR_BOT_TOKEN"
+        bot = telebot.TeleBot(BOT_TOKEN)
 
-TELEGRAM_AVAILABLE = setup_telegram()
+        print("Telegram initialized successfully")
+        return True
+
+    except Exception as e:
+        print("Telegram setup failed:", e)
+        return False
 
 
 if TELEGRAM_AVAILABLE:
